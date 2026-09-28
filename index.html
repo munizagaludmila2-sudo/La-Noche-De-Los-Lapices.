@@ -227,5 +227,197 @@ next.onclick=()=>{i++;render()};
 restart.onclick=()=>{i=0;score=0;render()};
 render();
 </script>
+  <!-- DATOS CURIOSOS -->
+<section class="datos-curiosos">
+  <h2>✏️ Datos curiosos</h2>
+  <p class="subtitulo">Tocá una tarjeta para descubrir el dato</p>
+
+  <div class="tarjetas">
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">✏️<br>Dato 1</div>
+        <div class="dorso">
+          <h3>📅 ¿Cuándo ocurrió?</h3>
+          <p>Los hechos comenzaron el 16 de septiembre de 1976, durante la última dictadura militar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">🏫<br>Dato 2</div>
+        <div class="dorso">
+          <h3>📍 ¿Dónde?</h3>
+          <p>Los estudiantes eran principalmente de la ciudad de La Plata, provincia de Buenos Aires.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">🎒<br>Dato 3</div>
+        <div class="dorso">
+          <h3>🚌 El boleto estudiantil</h3>
+          <p>Varios de los jóvenes habían participado en 1975 de movilizaciones por el boleto estudiantil secundario.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">👥<br>Dato 4</div>
+        <div class="dorso">
+          <h3>🔟 Eran jóvenes</h3>
+          <p>Diez estudiantes fueron secuestrados entre el 8 y el 21 de septiembre de 1976.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">💜<br>Dato 5</div>
+        <div class="dorso">
+          <h3>🕊️ Cuatro sobrevivieron</h3>
+          <p>Emilce Moler, Patricia Miranda, Pablo Díaz y Gustavo Calotti sobrevivieron al secuestro.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">🕯️<br>Dato 6</div>
+        <div class="dorso">
+          <h3>🕊️ Seis continúan desaparecidos</h3>
+          <p>Claudia Falcone, Francisco López Muntaner, María Clara Ciocchini, Horacio Ungaro, Daniel Racero y Claudio de Acha continúan desaparecidos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">🎬<br>Dato 7</div>
+        <div class="dorso">
+          <h3>🎥 Llegó al cine</h3>
+          <p>En 1986 se estrenó la película argentina <i>La Noche de los Lápices</i>, dirigida por Héctor Olivera.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">📚<br>Dato 8</div>
+        <div class="dorso">
+          <h3>📖 También existe un libro</h3>
+          <p>La historia fue difundida ampliamente a través del libro <i>La Noche de los Lápices</i>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">🇦🇷<br>Dato 9</div>
+        <div class="dorso">
+          <h3>🗓️ 16 de septiembre</h3>
+          <p>Desde 2014, cada 16 de septiembre se celebra el Día Nacional de la Juventud.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta" onclick="this.classList.toggle('girada')">
+      <div class="tarjeta-contenido">
+        <div class="frente">✏️<br>Dato 10</div>
+        <div class="dorso">
+          <h3>💜 Un símbolo</h3>
+          <p>El lápiz quedó asociado a la memoria de los estudiantes y a la defensa de sus derechos.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.datos-curiosos {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.datos-curiosos h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitulo {
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tarjeta {
+  height: 230px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.tarjeta-contenido {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.tarjeta.girada .tarjeta-contenido {
+  transform: rotateY(180deg);
+}
+
+.frente,
+.dorso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.frente {
+  background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dorso {
+  background: white;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.dorso h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.dorso p {
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0;
+}
+</style>
 </body>
 </html>
